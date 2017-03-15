@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "TestViewController.h"
+#import "TestTabViewController.h"
 
 @interface ViewController ()
 
@@ -16,14 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor lightGrayColor];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)onBtnClick:(id)sender {
+    TestTabViewController *vc = [TestTabViewController new];
+    
+//    TestViewController *vc = [TestViewController new];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:navVC animated:YES completion:nil];
 }
-
 
 @end

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A06081DB1E7824B4002FABF2 /* HJTabViewControllerPlugin_Base.m in Sources */ = {isa = PBXBuildFile; fileRef = A06081DA1E7824B4002FABF2 /* HJTabViewControllerPlugin_Base.m */; };
+		A06081DF1E7825D3002FABF2 /* HJTabViewController+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A06081DE1E7825D3002FABF2 /* HJTabViewController+ViewController.m */; };
+		A06081E21E78ECAD002FABF2 /* TestTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A06081E11E78ECAD002FABF2 /* TestTabViewController.m */; };
+		A06081E81E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = A06081E71E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.m */; };
+		A06081F41E7959B5002FABF2 /* HJTabViewBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A06081F11E7959B5002FABF2 /* HJTabViewBar.m */; };
+		A06081F51E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A06081F31E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.m */; };
 		A069C5B51E1F96FD008AD7DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A069C5B41E1F96FD008AD7DB /* main.m */; };
 		A069C5B81E1F96FD008AD7DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A069C5B71E1F96FD008AD7DB /* AppDelegate.m */; };
 		A069C5BB1E1F96FD008AD7DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A069C5BA1E1F96FD008AD7DB /* ViewController.m */; };
@@ -14,9 +20,23 @@
 		A069C5C01E1F96FD008AD7DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A069C5BF1E1F96FD008AD7DB /* Assets.xcassets */; };
 		A069C5C31E1F96FD008AD7DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A069C5C11E1F96FD008AD7DB /* LaunchScreen.storyboard */; };
 		A069C5CD1E1F9731008AD7DB /* HJTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A069C5CC1E1F9731008AD7DB /* HJTabViewController.m */; };
+		A0D699331E77D72100581FB8 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D699321E77D72100581FB8 /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A06081D91E7824B4002FABF2 /* HJTabViewControllerPlugin_Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTabViewControllerPlugin_Base.h; sourceTree = "<group>"; };
+		A06081DA1E7824B4002FABF2 /* HJTabViewControllerPlugin_Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTabViewControllerPlugin_Base.m; sourceTree = "<group>"; };
+		A06081DC1E78255E002FABF2 /* HJTabViewController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HJTabViewController+Private.h"; sourceTree = "<group>"; };
+		A06081DD1E7825D3002FABF2 /* HJTabViewController+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HJTabViewController+ViewController.h"; sourceTree = "<group>"; };
+		A06081DE1E7825D3002FABF2 /* HJTabViewController+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HJTabViewController+ViewController.m"; sourceTree = "<group>"; };
+		A06081E01E78ECAD002FABF2 /* TestTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTabViewController.h; sourceTree = "<group>"; };
+		A06081E11E78ECAD002FABF2 /* TestTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTabViewController.m; sourceTree = "<group>"; };
+		A06081E61E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTabViewControllerPlugin_HeaderScroll.h; sourceTree = "<group>"; };
+		A06081E71E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTabViewControllerPlugin_HeaderScroll.m; sourceTree = "<group>"; };
+		A06081F01E7959B5002FABF2 /* HJTabViewBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTabViewBar.h; sourceTree = "<group>"; };
+		A06081F11E7959B5002FABF2 /* HJTabViewBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTabViewBar.m; sourceTree = "<group>"; };
+		A06081F21E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTabViewControllerPlugin_TabViewBar.h; sourceTree = "<group>"; };
+		A06081F31E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTabViewControllerPlugin_TabViewBar.m; sourceTree = "<group>"; };
 		A069C5B01E1F96FD008AD7DB /* HJTabViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HJTabViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A069C5B41E1F96FD008AD7DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A069C5B61E1F96FD008AD7DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -29,6 +49,8 @@
 		A069C5C41E1F96FD008AD7DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A069C5CB1E1F9731008AD7DB /* HJTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTabViewController.h; sourceTree = "<group>"; };
 		A069C5CC1E1F9731008AD7DB /* HJTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTabViewController.m; sourceTree = "<group>"; };
+		A0D699311E77D72100581FB8 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		A0D699321E77D72100581FB8 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +64,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A06081EF1E7959B5002FABF2 /* HJTabViewBar */ = {
+			isa = PBXGroup;
+			children = (
+				A06081F01E7959B5002FABF2 /* HJTabViewBar.h */,
+				A06081F11E7959B5002FABF2 /* HJTabViewBar.m */,
+				A06081F21E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.h */,
+				A06081F31E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.m */,
+			);
+			name = HJTabViewBar;
+			path = ../../HJTabViewBar;
+			sourceTree = "<group>";
+		};
 		A069C5A71E1F96FD008AD7DB = {
 			isa = PBXGroup;
 			children = (
@@ -61,11 +95,16 @@
 		A069C5B21E1F96FD008AD7DB /* HJTabViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A06081EF1E7959B5002FABF2 /* HJTabViewBar */,
 				A069C5CA1E1F9708008AD7DB /* HJTabViewController */,
 				A069C5B61E1F96FD008AD7DB /* AppDelegate.h */,
 				A069C5B71E1F96FD008AD7DB /* AppDelegate.m */,
 				A069C5B91E1F96FD008AD7DB /* ViewController.h */,
 				A069C5BA1E1F96FD008AD7DB /* ViewController.m */,
+				A06081E01E78ECAD002FABF2 /* TestTabViewController.h */,
+				A06081E11E78ECAD002FABF2 /* TestTabViewController.m */,
+				A0D699311E77D72100581FB8 /* TestViewController.h */,
+				A0D699321E77D72100581FB8 /* TestViewController.m */,
 				A069C5BC1E1F96FD008AD7DB /* Main.storyboard */,
 				A069C5BF1E1F96FD008AD7DB /* Assets.xcassets */,
 				A069C5C11E1F96FD008AD7DB /* LaunchScreen.storyboard */,
@@ -88,6 +127,13 @@
 			children = (
 				A069C5CB1E1F9731008AD7DB /* HJTabViewController.h */,
 				A069C5CC1E1F9731008AD7DB /* HJTabViewController.m */,
+				A06081DC1E78255E002FABF2 /* HJTabViewController+Private.h */,
+				A06081DD1E7825D3002FABF2 /* HJTabViewController+ViewController.h */,
+				A06081DE1E7825D3002FABF2 /* HJTabViewController+ViewController.m */,
+				A06081D91E7824B4002FABF2 /* HJTabViewControllerPlugin_Base.h */,
+				A06081DA1E7824B4002FABF2 /* HJTabViewControllerPlugin_Base.m */,
+				A06081E61E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.h */,
+				A06081E71E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.m */,
 			);
 			name = HJTabViewController;
 			path = ../../HJTabViewController;
@@ -164,10 +210,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06081E21E78ECAD002FABF2 /* TestTabViewController.m in Sources */,
+				A06081DF1E7825D3002FABF2 /* HJTabViewController+ViewController.m in Sources */,
 				A069C5CD1E1F9731008AD7DB /* HJTabViewController.m in Sources */,
+				A06081F51E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.m in Sources */,
+				A06081E81E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.m in Sources */,
 				A069C5BB1E1F96FD008AD7DB /* ViewController.m in Sources */,
 				A069C5B81E1F96FD008AD7DB /* AppDelegate.m in Sources */,
+				A06081F41E7959B5002FABF2 /* HJTabViewBar.m in Sources */,
 				A069C5B51E1F96FD008AD7DB /* main.m in Sources */,
+				A06081DB1E7824B4002FABF2 /* HJTabViewControllerPlugin_Base.m in Sources */,
+				A0D699331E77D72100581FB8 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -274,7 +327,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -322,6 +375,7 @@
 				A069C5C91E1F96FD008AD7DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
