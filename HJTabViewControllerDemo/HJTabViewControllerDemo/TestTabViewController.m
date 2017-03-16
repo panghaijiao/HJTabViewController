@@ -10,8 +10,9 @@
 #import "TestViewController.h"
 #import "HJTabViewControllerPlugin_HeaderScroll.h"
 #import "HJTabViewControllerPlugin_TabViewBar.h"
+#import "HJDefaultTabViewBar.h"
 
-@interface TestTabViewController () <HJTabViewControllerDataSource, HJTabViewBarDateSource>
+@interface TestTabViewController () <HJTabViewControllerDataSource, HJTabViewControllerDelagate, HJTabViewBarPluginDelagate, HJDefaultTabViewBarDelegate>
 
 @end
 
@@ -19,16 +20,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
-//    self.navigationController.navigationBarHidden = YES;
+    self.title = @"olinone";
     self.tabDataSource = self;
+    self.tabDelegate = self;
     [self enablePlugin:[HJTabViewControllerPlugin_HeaderScroll new]];
-    HJTabViewControllerPlugin_TabViewBar *tabViewBar = [[HJTabViewControllerPlugin_TabViewBar alloc] initWithTabViewBarDataSource:self];
-    [self enablePlugin:tabViewBar];
+    
+    HJDefaultTabViewBar *tabViewBar = [HJDefaultTabViewBar new];
+    tabViewBar.delegate = self;
+    HJTabViewControllerPlugin_TabViewBar *tabViewBarPlugin = [[HJTabViewControllerPlugin_TabViewBar alloc] initWithTabViewBar:tabViewBar delegate:self];
+    [self enablePlugin:tabViewBarPlugin];
 }
 
-- (id)tabViewBar:(HJTabViewBar *)tabViewBar titleForIndex:(NSInteger)index {
-    return @"列表";
+#pragma mark -
+
+- (NSInteger)numberOfTabForTabViewBar:(HJDefaultTabViewBar *)tabViewBar {
+    return [self numberOfViewControllerForTabViewController:self];
+}
+
+- (id)tabViewBar:(HJDefaultTabViewBar *)tabViewBar titleForIndex:(NSInteger)index {
+    if (index == 0) {
+        return @"虾米";
+    }
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"网易云 5"];
+    [attString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(3, 2)];
+    return attString;
+}
+
+- (void)tabViewBar:(HJDefaultTabViewBar *)tabViewBar didSelectIndex:(NSInteger)index {
+    [self scrollToIndex:index animated:YES];
+}
+
+#pragma mark -
+
+- (void)tabViewController:(HJTabViewController *)tabViewController scrollViewVerticalScroll:(CGFloat)contentPercentY {
+    self.navigationController.navigationBar.alpha = contentPercentY;
 }
 
 - (NSInteger)numberOfViewControllerForTabViewController:(HJTabViewController *)tabViewController {

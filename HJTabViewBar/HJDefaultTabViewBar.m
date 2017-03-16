@@ -1,14 +1,14 @@
 //
-//  HJTabViewBar.m
+//  HJDefaultTabViewBar.m
 //  HJTabViewControllerDemo
 //
-//  Created by haijiao on 2017/3/15.
+//  Created by haijiao on 2017/3/16.
 //  Copyright © 2017年 olinone. All rights reserved.
 //
 
-#import "HJTabViewBar.h"
+#import "HJDefaultTabViewBar.h"
 
-@interface HJTabViewBar () {
+@interface HJDefaultTabViewBar () {
     UIView      *_indicatorView;
     UIView      *_seperatorView;
     NSInteger   _curIndex;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation HJTabViewBar
+@implementation HJDefaultTabViewBar
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -32,7 +32,8 @@
         
         _indicatorView = [[UIView alloc] initWithFrame:CGRectZero];
         _indicatorView.backgroundColor = self.highlightedColor;
-        _indicatorView.layer.cornerRadius = 0.5;
+        _indicatorView.layer.cornerRadius = 1;
+        _indicatorView.layer.masksToBounds = YES;
         [self addSubview:_indicatorView];
         
         _seperatorView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - 0.5, CGRectGetWidth(self.bounds), 0.5)];
@@ -106,7 +107,7 @@
     }
     
     UIButton *btn = [self.buttons objectAtIndex:index];
-    id title = [self.dataSource tabViewBar:self titleForIndex:index];
+    id title = [self.delegate tabViewBar:self titleForIndex:index];
     
     if ([title isKindOfClass:[NSString class]]) {
         [btn setTitle:title forState:UIControlStateNormal];
@@ -134,14 +135,14 @@
     [self.buttons enumerateObjectsUsingBlock:^(UIButton *btn, NSUInteger idx, BOOL *stop) {
         [btn removeFromSuperview];
     }];
-    NSInteger count = [self.dataSource numberOfTabForTabViewBar:self];
+    NSInteger count = [self.delegate numberOfTabForTabViewBar:self];
     CGFloat cellWidth = CGRectGetWidth(self.bounds) / count;
     _indicatorView.frame = CGRectMake(0, CGRectGetHeight(self.bounds) - 8, cellWidth, 2);
     NSMutableArray *newBtns = [NSMutableArray arrayWithCapacity:count];
     for (u_int8_t index = 0; index < count; index++) {
         UIButton *btn = [self createButton];
         btn.tag = index;
-        id title = [self.dataSource tabViewBar:self titleForIndex:index];
+        id title = [self.delegate tabViewBar:self titleForIndex:index];
         
         if ([title isKindOfClass:[NSString class]]) {
             [btn setTitle:title forState:UIControlStateNormal];
@@ -181,8 +182,8 @@
 }
 
 - (IBAction)onBtnClick:(UIButton *)sender {
-    if ([self.dataSource respondsToSelector:@selector(tabViewBar:didSelectIndex:)]) {
-        [self.dataSource tabViewBar:self didSelectIndex:sender.tag];
+    if ([self.delegate respondsToSelector:@selector(tabViewBar:didSelectIndex:)]) {
+        [self.delegate tabViewBar:self didSelectIndex:sender.tag];
     }
 }
 

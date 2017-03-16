@@ -7,24 +7,17 @@
 //
 
 #import "ViewController.h"
-#import "TestViewController.h"
 #import "TestTabViewController.h"
-
-@interface ViewController ()
-
-@end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (IBAction)onBtnClick:(id)sender {
     TestTabViewController *vc = [TestTabViewController new];
-    
-//    TestViewController *vc = [TestViewController new];
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:navVC animated:YES completion:nil];
 }

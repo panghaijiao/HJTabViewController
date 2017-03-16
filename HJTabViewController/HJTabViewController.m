@@ -69,8 +69,11 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     if (!_viewDidAppearIsCalledBefore) {
-        [self viewDidScrollToIndex:self.curIndex];
         _viewDidAppearIsCalledBefore = YES;
+        [self viewDidScrollToIndex:self.curIndex];
+        if (_headViewScrollEnable) {
+            [self tabDelegateScrollViewVerticalScroll:0];
+        }
     }
 }
 

@@ -11,8 +11,6 @@
 		A06081DF1E7825D3002FABF2 /* HJTabViewController+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A06081DE1E7825D3002FABF2 /* HJTabViewController+ViewController.m */; };
 		A06081E21E78ECAD002FABF2 /* TestTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A06081E11E78ECAD002FABF2 /* TestTabViewController.m */; };
 		A06081E81E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = A06081E71E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.m */; };
-		A06081F41E7959B5002FABF2 /* HJTabViewBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A06081F11E7959B5002FABF2 /* HJTabViewBar.m */; };
-		A06081F51E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A06081F31E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.m */; };
 		A069C5B51E1F96FD008AD7DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A069C5B41E1F96FD008AD7DB /* main.m */; };
 		A069C5B81E1F96FD008AD7DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A069C5B71E1F96FD008AD7DB /* AppDelegate.m */; };
 		A069C5BB1E1F96FD008AD7DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A069C5BA1E1F96FD008AD7DB /* ViewController.m */; };
@@ -20,6 +18,9 @@
 		A069C5C01E1F96FD008AD7DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A069C5BF1E1F96FD008AD7DB /* Assets.xcassets */; };
 		A069C5C31E1F96FD008AD7DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A069C5C11E1F96FD008AD7DB /* LaunchScreen.storyboard */; };
 		A069C5CD1E1F9731008AD7DB /* HJTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A069C5CC1E1F9731008AD7DB /* HJTabViewController.m */; };
+		A07CBECC1E7A2CBE0032E315 /* HJTabViewControllerPlugin_TabViewBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A07CBECB1E7A2CBE0032E315 /* HJTabViewControllerPlugin_TabViewBar.m */; };
+		A07CBECF1E7A31410032E315 /* HJTabViewBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A07CBECE1E7A31410032E315 /* HJTabViewBar.m */; };
+		A07CBED21E7A32070032E315 /* HJDefaultTabViewBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A07CBED11E7A32070032E315 /* HJDefaultTabViewBar.m */; };
 		A0D699331E77D72100581FB8 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D699321E77D72100581FB8 /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -33,10 +34,6 @@
 		A06081E11E78ECAD002FABF2 /* TestTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTabViewController.m; sourceTree = "<group>"; };
 		A06081E61E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTabViewControllerPlugin_HeaderScroll.h; sourceTree = "<group>"; };
 		A06081E71E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTabViewControllerPlugin_HeaderScroll.m; sourceTree = "<group>"; };
-		A06081F01E7959B5002FABF2 /* HJTabViewBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTabViewBar.h; sourceTree = "<group>"; };
-		A06081F11E7959B5002FABF2 /* HJTabViewBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTabViewBar.m; sourceTree = "<group>"; };
-		A06081F21E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTabViewControllerPlugin_TabViewBar.h; sourceTree = "<group>"; };
-		A06081F31E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTabViewControllerPlugin_TabViewBar.m; sourceTree = "<group>"; };
 		A069C5B01E1F96FD008AD7DB /* HJTabViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HJTabViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A069C5B41E1F96FD008AD7DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A069C5B61E1F96FD008AD7DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -49,6 +46,12 @@
 		A069C5C41E1F96FD008AD7DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A069C5CB1E1F9731008AD7DB /* HJTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTabViewController.h; sourceTree = "<group>"; };
 		A069C5CC1E1F9731008AD7DB /* HJTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTabViewController.m; sourceTree = "<group>"; };
+		A07CBECA1E7A2CBE0032E315 /* HJTabViewControllerPlugin_TabViewBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTabViewControllerPlugin_TabViewBar.h; sourceTree = "<group>"; };
+		A07CBECB1E7A2CBE0032E315 /* HJTabViewControllerPlugin_TabViewBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTabViewControllerPlugin_TabViewBar.m; sourceTree = "<group>"; };
+		A07CBECD1E7A31410032E315 /* HJTabViewBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJTabViewBar.h; sourceTree = "<group>"; };
+		A07CBECE1E7A31410032E315 /* HJTabViewBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJTabViewBar.m; sourceTree = "<group>"; };
+		A07CBED01E7A32070032E315 /* HJDefaultTabViewBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJDefaultTabViewBar.h; sourceTree = "<group>"; };
+		A07CBED11E7A32070032E315 /* HJDefaultTabViewBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJDefaultTabViewBar.m; sourceTree = "<group>"; };
 		A0D699311E77D72100581FB8 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		A0D699321E77D72100581FB8 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,10 +70,8 @@
 		A06081EF1E7959B5002FABF2 /* HJTabViewBar */ = {
 			isa = PBXGroup;
 			children = (
-				A06081F01E7959B5002FABF2 /* HJTabViewBar.h */,
-				A06081F11E7959B5002FABF2 /* HJTabViewBar.m */,
-				A06081F21E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.h */,
-				A06081F31E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.m */,
+				A07CBED01E7A32070032E315 /* HJDefaultTabViewBar.h */,
+				A07CBED11E7A32070032E315 /* HJDefaultTabViewBar.m */,
 			);
 			name = HJTabViewBar;
 			path = ../../HJTabViewBar;
@@ -134,6 +135,10 @@
 				A06081DA1E7824B4002FABF2 /* HJTabViewControllerPlugin_Base.m */,
 				A06081E61E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.h */,
 				A06081E71E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.m */,
+				A07CBECA1E7A2CBE0032E315 /* HJTabViewControllerPlugin_TabViewBar.h */,
+				A07CBECB1E7A2CBE0032E315 /* HJTabViewControllerPlugin_TabViewBar.m */,
+				A07CBECD1E7A31410032E315 /* HJTabViewBar.h */,
+				A07CBECE1E7A31410032E315 /* HJTabViewBar.m */,
 			);
 			name = HJTabViewController;
 			path = ../../HJTabViewController;
@@ -212,12 +217,13 @@
 			files = (
 				A06081E21E78ECAD002FABF2 /* TestTabViewController.m in Sources */,
 				A06081DF1E7825D3002FABF2 /* HJTabViewController+ViewController.m in Sources */,
+				A07CBED21E7A32070032E315 /* HJDefaultTabViewBar.m in Sources */,
+				A07CBECF1E7A31410032E315 /* HJTabViewBar.m in Sources */,
 				A069C5CD1E1F9731008AD7DB /* HJTabViewController.m in Sources */,
-				A06081F51E7959B5002FABF2 /* HJTabViewControllerPlugin_TabViewBar.m in Sources */,
+				A07CBECC1E7A2CBE0032E315 /* HJTabViewControllerPlugin_TabViewBar.m in Sources */,
 				A06081E81E7940F5002FABF2 /* HJTabViewControllerPlugin_HeaderScroll.m in Sources */,
 				A069C5BB1E1F96FD008AD7DB /* ViewController.m in Sources */,
 				A069C5B81E1F96FD008AD7DB /* AppDelegate.m in Sources */,
-				A06081F41E7959B5002FABF2 /* HJTabViewBar.m in Sources */,
 				A069C5B51E1F96FD008AD7DB /* main.m in Sources */,
 				A06081DB1E7824B4002FABF2 /* HJTabViewControllerPlugin_Base.m in Sources */,
 				A0D699331E77D72100581FB8 /* TestViewController.m in Sources */,
