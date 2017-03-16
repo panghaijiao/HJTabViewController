@@ -38,14 +38,9 @@
 }
 
 - (void)initPlugin {
-    _tabCount = [self.tabViewController.tabDataSource numberOfViewControllerForTabViewController:self.tabViewController];
-    if (_tabCount < 1) {
-        return;
-    }
     if (CGRectGetHeight(self.tabViewBar.frame) == 0) {
         self.tabViewBar.frame = CGRectMake(0, 0, 0, HJTabViewBarDefaultHeight);
     }
-    _maxIndicatorX = CGRectGetWidth(self.tabViewController.scrollView.frame) * (_tabCount - 1);
 }
 
 - (void)loadPlugin {
@@ -63,6 +58,9 @@
         [self.tabViewController.tabHeaderView addSubview:self.tabViewBar];
     }
     
+    _tabCount = [self.tabViewController.tabDataSource numberOfViewControllerForTabViewController:self.tabViewController];
+    _maxIndicatorX = CGRectGetWidth(self.tabViewController.scrollView.frame) * (_tabCount - 1);
+    
     [self.tabViewBar reloadTabBar];
 
     if ([self.delegate respondsToSelector:@selector(tabViewController:tabViewBarDidLoad:)]) {
@@ -73,6 +71,9 @@
 #pragma mark -
 
 - (void)scrollViewHorizontalScroll:(CGFloat)contentOffsetX {
+    if ([self.tabViewBar respondsToSelector:@selector(tabScrollXOffset:)]) {
+        [self.tabViewBar tabScrollXOffset:contentOffsetX];
+    }
     CGFloat percent = contentOffsetX / _maxIndicatorX;
     if ([self.tabViewBar respondsToSelector:@selector(tabScrollXPercent:)]) {
         [self.tabViewBar tabScrollXPercent:percent];

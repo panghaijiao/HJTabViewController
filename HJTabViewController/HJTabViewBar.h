@@ -17,6 +17,7 @@ static const CGFloat HJTabViewBarDefaultHeight = 44.0f;
 
 @optional
 - (void)tabScrollXPercent:(CGFloat)percent;
+- (void)tabScrollXOffset:(CGFloat)contentOffsetX;
 - (void)tabDidScrollToIndex:(NSInteger)index;
 
 @end
