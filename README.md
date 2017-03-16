@@ -5,6 +5,8 @@
 ![](https://img.shields.io/badge/language-objc-5787e5.svg)
 ![](https://img.shields.io/badge/license-MIT-brightgreen.svg)  
 
+![](http://7pum7o.com1.z0.glb.clouddn.com/HJTabViewControllerDemo1.png)
+
 ## Installation with CocoaPods
 
 [CocoaPods](http://cocoapods.org/) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries in your projects. See the [Get Started](http://cocoapods.org/#get_started) section for more details.
