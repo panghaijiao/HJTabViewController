@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/language-objc-5787e5.svg)
 ![](https://img.shields.io/badge/license-MIT-brightgreen.svg)  
 
-![](http://7pum7o.com1.z0.glb.clouddn.com/HJTabViewControllerDemo1.png?imageView2/0/w/800)
+ <img src=http://7pum7o.com1.z0.glb.clouddn.com/HJTabViewControllerDemo1.png?imageView2/0/w/400  width=200>
 
 ## Installation with CocoaPods
 
