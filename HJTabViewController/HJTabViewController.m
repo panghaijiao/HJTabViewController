@@ -222,7 +222,7 @@
         return;
     }
     UIEdgeInsets insets = [self.tabDataSource containerInsetsForTabViewController:self];
-    self.containerView.frame = UIEdgeInsetsInsetRect(self.containerView.bounds, insets);
+    self.containerView.frame = UIEdgeInsetsInsetRect(self.view.bounds, insets);
 }
 
 - (void)loadControllerView {
@@ -438,7 +438,7 @@
     self.containerView = [[UIView alloc] initWithFrame:self.view.bounds];
     self.containerView.backgroundColor = [UIColor clearColor];
     self.containerView.clipsToBounds = YES;
-    self.containerView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
+    self.containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.containerView];
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:self.containerView.bounds];
