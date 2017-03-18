@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/language-objc-5787e5.svg)
 ![](https://img.shields.io/badge/license-MIT-brightgreen.svg)  
 
-![](http://7pum7o.com1.z0.glb.clouddn.com/HJTabVC.gif)  
+![Smaller icon](http://7pum7o.com1.z0.glb.clouddn.com/HJTabVC.gif "Title here")
 
 ## Installation with CocoaPods
 
