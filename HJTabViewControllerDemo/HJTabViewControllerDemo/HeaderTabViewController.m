@@ -1,34 +1,34 @@
 //
-//  TestTabViewController.m
+//  HeaderTabViewController.m
 //  HJTabViewControllerDemo
 //
-//  Created by haijiao on 2017/3/15.
+//  Created by haijiao on 2017/3/18.
 //  Copyright © 2017年 olinone. All rights reserved.
 //
 
-#import "TestTabViewController.h"
-#import "TestViewController.h"
+#import "HeaderTabViewController.h"
+#import "TableViewController.h"
 #import "HJTabViewControllerPlugin_HeaderScroll.h"
 #import "HJTabViewControllerPlugin_TabViewBar.h"
 #import "HJDefaultTabViewBar.h"
 
-@interface TestTabViewController () <HJTabViewControllerDataSource, HJTabViewControllerDelagate, HJTabViewBarPluginDelagate, HJDefaultTabViewBarDelegate>
+@interface HeaderTabViewController () <HJTabViewControllerDataSource, HJTabViewControllerDelagate, HJDefaultTabViewBarDelegate>
 
 @end
 
-@implementation TestTabViewController
+@implementation HeaderTabViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"olinone";
     self.tabDataSource = self;
     self.tabDelegate = self;
-    [self enablePlugin:[HJTabViewControllerPlugin_HeaderScroll new]];
     
     HJDefaultTabViewBar *tabViewBar = [HJDefaultTabViewBar new];
     tabViewBar.delegate = self;
-    HJTabViewControllerPlugin_TabViewBar *tabViewBarPlugin = [[HJTabViewControllerPlugin_TabViewBar alloc] initWithTabViewBar:tabViewBar delegate:self];
+    HJTabViewControllerPlugin_TabViewBar *tabViewBarPlugin = [[HJTabViewControllerPlugin_TabViewBar alloc] initWithTabViewBar:tabViewBar delegate:nil];
     [self enablePlugin:tabViewBarPlugin];
+    
+    [self enablePlugin:[HJTabViewControllerPlugin_HeaderScroll new]];
 }
 
 #pragma mark -
@@ -61,7 +61,7 @@
 }
 
 - (UIViewController *)tabViewController:(HJTabViewController *)tabViewController viewControllerForIndex:(NSInteger)index {
-    TestViewController *vc = [TestViewController new];
+    TableViewController *vc = [TableViewController new];
     vc.index = index;
     return vc;
 }

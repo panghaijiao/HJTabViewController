@@ -67,6 +67,9 @@
 }
 
 - (void)updateIndicatorFrameWithPercent:(CGFloat)percent {
+    if (self.buttons == 0) {
+        return;
+    }
     NSInteger index = (NSInteger)((self.buttons.count - 1) * percent);
     
     CGFloat averageWidth = CGRectGetWidth(self.frame) / self.buttons.count;

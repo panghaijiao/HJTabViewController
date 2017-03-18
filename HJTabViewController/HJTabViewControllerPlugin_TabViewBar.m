@@ -44,28 +44,34 @@
 }
 
 - (void)loadPlugin {
-    if (!_loadFlag) {
-        _loadFlag = YES;
-        if (!self.tabViewController.tabHeaderView) {
-            self.tabViewController.tabHeaderView = self.tabViewBar;
-            return;
-        }
-        
-        CGFloat tabBarHeight = CGRectGetHeight(self.tabViewBar.frame);
-        CGFloat tabBarFrameMinY = CGRectGetHeight(self.tabViewController.tabHeaderView.frame) - tabBarHeight;
-        self.tabViewBar.frame = CGRectMake(0, tabBarFrameMinY, CGRectGetWidth(self.tabViewController.scrollView.frame), tabBarHeight);
-        self.tabViewBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-        [self.tabViewController.tabHeaderView addSubview:self.tabViewBar];
-    }
-    
     _tabCount = [self.tabViewController.tabDataSource numberOfViewControllerForTabViewController:self.tabViewController];
     _maxIndicatorX = CGRectGetWidth(self.tabViewController.scrollView.frame) * (_tabCount - 1);
     
+    [self layoutTabViewBar];
     [self.tabViewBar reloadTabBar];
 
     if ([self.delegate respondsToSelector:@selector(tabViewController:tabViewBarDidLoad:)]) {
         [self.delegate tabViewController:self.tabViewController tabViewBarDidLoad:self.tabViewBar];
     }
+}
+
+- (void)layoutTabViewBar {
+    if (_loadFlag) {
+        return;
+    }
+    _loadFlag = YES;
+    
+    CGFloat tabBarHeight = CGRectGetHeight(self.tabViewBar.frame);
+    if (!self.tabViewController.tabHeaderView) {
+        self.tabViewBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.tabViewController.scrollView.frame), tabBarHeight);
+        self.tabViewController.tabHeaderView = self.tabViewBar;
+        return;
+    }
+
+    CGFloat tabBarFrameMinY = CGRectGetHeight(self.tabViewController.tabHeaderView.frame) - tabBarHeight;
+    self.tabViewBar.frame = CGRectMake(0, tabBarFrameMinY, CGRectGetWidth(self.tabViewController.scrollView.frame), tabBarHeight);
+    self.tabViewBar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+    [self.tabViewController.tabHeaderView addSubview:self.tabViewBar];
 }
 
 #pragma mark -
