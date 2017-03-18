@@ -18,6 +18,6 @@ pod 'HJTabViewController',     :git => 'https://github.com/panghaijiao/HJTabView
 ```
 
 
-## License:  
+## License
 
 HJTabViewController is released under the MIT license. See LICENSE for details.
