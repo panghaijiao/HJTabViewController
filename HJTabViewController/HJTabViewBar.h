@@ -13,7 +13,7 @@ static const CGFloat HJTabViewBarDefaultHeight = 44.0f;
 @protocol HJTabViewBar
 
 @required
-- (void)reloadTabBar;
+- (void)reloadTabBar;  // Subclass must implement -reloadTabBar
 
 @optional
 - (void)tabScrollXPercent:(CGFloat)percent;

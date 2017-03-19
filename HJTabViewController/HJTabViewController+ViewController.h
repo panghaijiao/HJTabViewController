@@ -12,6 +12,6 @@
 
 @property (nonatomic, weak) HJTabViewController *tabViewController;
 
-@property (nonatomic, weak) UIScrollView        *tabContentScrollView;
+@property (nonatomic, weak) UIScrollView        *tabContentScrollView; // ScrollView of childViewController. You can implement as necessary.
 
 @end

@@ -374,6 +374,7 @@
         [curScrollView setContentOffset:CGPointMake(0, -insets.top) animated:YES];
     }
     _contentOffsetY = curScrollView.contentOffset.y;
+    [self enableCurScrollViewScrollToTop:YES];
     [self viewDidScrollToIndex:self.curIndex];
 }
 

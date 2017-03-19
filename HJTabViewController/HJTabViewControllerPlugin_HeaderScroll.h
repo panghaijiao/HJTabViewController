@@ -8,6 +8,9 @@
 
 #import "HJTabViewControllerPlugin_Base.h"
 
+/*
+ This plugin can solve the problem of headView sliding. you can enable when tabViewController viewDidLoad
+*/
 @interface HJTabViewControllerPlugin_HeaderScroll : HJTabViewControllerPlugin_Base
 
 @end

@@ -9,8 +9,6 @@
 #import "HJTabViewControllerPlugin_Base.h"
 #import "HJTabViewBar.h"
 
-//_______________________________________________________________________________________________________________
-
 @protocol HJTabViewBarPluginDelagate <NSObject>
 
 @optional
@@ -21,6 +19,9 @@
 
 //_______________________________________________________________________________________________________________
 
+/*
+ You can enable custome tabViewBar by this plugin. Default tabViewBar is nil
+ */
 @interface HJTabViewControllerPlugin_TabViewBar : HJTabViewControllerPlugin_Base
 
 - (instancetype)initWithTabViewBar:(HJTabViewBar *)tabViewBar delegate:(id<HJTabViewBarPluginDelagate>)delegate;

@@ -32,7 +32,7 @@
 @property (nonatomic, weak)      id<HJTabViewControllerDataSource>  tabDataSource;
 @property (nonatomic, weak)      id<HJTabViewControllerDelagate>    tabDelegate;
 
-@property (nonatomic, assign)    BOOL            headerZoomIn; //headerView放大，默认YES
+@property (nonatomic, assign)    BOOL            headerZoomIn; // Default is YES when headerView not nil
 
 @property (nonatomic, readonly)  NSInteger       curIndex;
 

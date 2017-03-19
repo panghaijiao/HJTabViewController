@@ -10,6 +10,9 @@
 #import <Foundation/Foundation.h>
 @class  HJTabViewController;
 
+/*
+ Subclasses can implement as necessary. The default is a nop.
+*/
 @protocol HJTabViewControllerPlugin <NSObject>
 
 - (void)scrollViewVerticalScroll:(CGFloat)contentPercentY;
@@ -25,8 +28,13 @@
 
 @property (nonatomic, assign) HJTabViewController  *tabViewController;
 
+// Called only once when enable. Default does nothing
 - (void)initPlugin;
+
+// Called when tabViewController load. Default does nothing
 - (void)loadPlugin;
+
+// Called before tabViewController reload. Default does nothing
 - (void)removePlugin;
 
 @end
