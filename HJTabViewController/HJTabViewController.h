@@ -5,6 +5,20 @@
 //  Created by haijiao on 2017/1/6.
 //  Copyright © 2017年 olinone. All rights reserved.
 //
+//  -----------------------
+//  |       _oo0oo_       |
+//  |      o8888888o      |
+//  |      (| █━█ |)      |
+//  |       \  =  /       |
+//  |        `---'        |
+//  |~~~~~~~~~~~~~~~~~~~~~|
+//  |  HeaderBottomInset  |
+//  |~~~~~~~~~~~~~~~~~~~~~|
+//  |                     |
+//  |                     |
+//  |                     |
+//  -----------------------
+//
 
 #import <UIKit/UIKit.h>
 @class HJTabViewController;
