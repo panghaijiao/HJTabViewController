@@ -18,7 +18,10 @@
 
 - (void)loadPlugin {
     UIViewController *vc = [self.tabViewController viewControllerForIndex:self.tabViewController.curIndex];
-    [self.tabViewController.view addGestureRecognizer:vc.tabContentScrollView.panGestureRecognizer];
+    UIScrollView *tabContentScrollView = vc.tabContentScrollView;
+    if (tabContentScrollView) {
+        [self.tabViewController.view addGestureRecognizer:tabContentScrollView.panGestureRecognizer];
+    }
 }
 
 - (void)scrollViewWillScrollFromIndex:(NSInteger)index {
@@ -28,7 +31,10 @@
 
 - (void)scrollViewDidScrollToIndex:(NSInteger)index {
     UIViewController *vc = [self.tabViewController viewControllerForIndex:index];
-    [self.tabViewController.view addGestureRecognizer:vc.tabContentScrollView.panGestureRecognizer];
+    UIScrollView *tabContentScrollView = vc.tabContentScrollView;
+    if (tabContentScrollView) {
+        [self.tabViewController.view addGestureRecognizer:tabContentScrollView.panGestureRecognizer];
+    }
 }
 
 @end
