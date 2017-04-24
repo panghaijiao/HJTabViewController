@@ -67,7 +67,8 @@
 }
 
 - (UIView *)tabHeaderViewForTabViewController:(HJTabViewController *)tabViewController {
-    UIImageView *headerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 0, 300)];
+    CGRect rect = CGRectMake(0, 0, 0, floor(300.0f));
+    UIImageView *headerView = [[UIImageView alloc] initWithFrame:rect];
     headerView.image = [UIImage imageNamed:@"1"];
     headerView.contentMode = UIViewContentModeScaleAspectFill;
     headerView.userInteractionEnabled = YES;
