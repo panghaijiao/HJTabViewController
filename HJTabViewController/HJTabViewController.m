@@ -311,8 +311,9 @@
     if (_contentOffsetY > -_headParameter.headHeight) {
         headRect.size.height = _headParameter.headHeight;
         headRect.origin.y += disY;
-        headRect.origin.y = MAX(CGRectGetMinY(headRect), _headParameter.minHeadFrameOriginY);
         headRect.origin.y = MIN(CGRectGetMinY(headRect), 0);
+        headRect.origin.y = MAX(CGRectGetMinY(headRect), _headParameter.minHeadFrameOriginY);
+        headRect.origin.y = MAX(CGRectGetMinY(headRect), -_contentOffsetY - _headParameter.headHeight);
     } else {
         headRect.origin.y = 0;
         headRect.size.height = self.headerZoomIn ? -scrollView.contentOffset.y : _headParameter.headHeight;
