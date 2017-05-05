@@ -44,7 +44,8 @@
 }
 
 - (void)tabViewBar:(HJDefaultTabViewBar *)tabViewBar didSelectIndex:(NSInteger)index {
-    [self scrollToIndex:index animated:YES];
+    BOOL anim = labs(index - self.curIndex) > 1 ? NO: YES;
+    [self scrollToIndex:index animated:anim];
 }
 
 #pragma mark -
