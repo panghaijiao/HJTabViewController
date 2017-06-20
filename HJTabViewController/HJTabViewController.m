@@ -51,6 +51,13 @@
     }
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    if (self.curIndex != self.scrollView.contentOffset.x / CGRectGetWidth(self.scrollView.frame)) {
+        [self scrollViewDidEndDecelerating:self.scrollView];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadContainerView];
