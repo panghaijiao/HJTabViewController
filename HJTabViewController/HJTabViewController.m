@@ -140,15 +140,15 @@
         if (!scrollView) {
             continue;
         }
-        CGFloat maxY = MIN(CGRectGetMaxY(self.tabHeaderView.frame), _headParameter.headHeight);
-        if (scrollView.contentOffset.y < -maxY) {
+        CGFloat maxY = -MIN(CGRectGetMaxY(self.tabHeaderView.frame), _headParameter.headHeight);
+        if (scrollView.contentOffset.y < maxY) {
             CGRect tempRect = self.tabHeaderView.frame;
-            scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -maxY);
+            scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, maxY);
             self.tabHeaderView.frame = tempRect;
         }
-        CGFloat minY = CGRectGetMaxY(self.tabHeaderView.frame);
-        if (-scrollView.contentOffset.y + scrollView.contentSize.height < minY) {
-            scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -minY);
+        CGFloat minY = scrollView.contentInset.top + scrollView.contentSize.height - CGRectGetHeight(scrollView.frame);
+        if (scrollView.contentOffset.y > minY) {
+            scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -CGRectGetMaxY(self.tabHeaderView.frame));
         }
     }
 }
