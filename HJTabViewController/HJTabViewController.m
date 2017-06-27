@@ -146,7 +146,7 @@
             scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, maxY);
             self.tabHeaderView.frame = tempRect;
         }
-        CGFloat minY = scrollView.contentInset.top + scrollView.contentSize.height - CGRectGetHeight(scrollView.frame);
+        CGFloat minY = scrollView.contentSize.height - CGRectGetHeight(scrollView.frame);
         if (scrollView.contentOffset.y > minY) {
             scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -CGRectGetMaxY(self.tabHeaderView.frame));
         }
