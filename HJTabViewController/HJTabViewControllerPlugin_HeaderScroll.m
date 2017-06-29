@@ -7,33 +7,54 @@
 //
 
 #import "HJTabViewControllerPlugin_HeaderScroll.h"
+#import "HJTabViewController+Private.h"
 #import "HJTabViewController+ViewController.h"
+
+@interface HJTabViewControllerPlugin_HeaderScroll ()
+
+@property (nonatomic, assign) NSInteger index;
+
+@end
 
 @implementation HJTabViewControllerPlugin_HeaderScroll
 
 - (void)removePlugin {
-    UIViewController *vc = [self.tabViewController viewControllerForIndex:self.tabViewController.curIndex];
-    [self.tabViewController.view removeGestureRecognizer:vc.tabContentScrollView.panGestureRecognizer];
+    [self removePanGestureForIndex:self.tabViewController.curIndex];
 }
 
 - (void)loadPlugin {
-    UIViewController *vc = [self.tabViewController viewControllerForIndex:self.tabViewController.curIndex];
+    [self addPanGestureForIndex:self.tabViewController.curIndex];
+    self.index = self.tabViewController.curIndex;
+}
+
+- (void)scrollViewWillScrollFromIndex:(NSInteger)index {
+    self.index = index;
+}
+
+- (void)scrollViewDidScrollToIndex:(NSInteger)index {
+    if (self.index == index) {
+        return;
+    }
+    [self removePanGestureForIndex:self.index];
+    [self addPanGestureForIndex:index];
+    self.index = index;
+}
+
+#pragma mark -
+
+- (void)addPanGestureForIndex:(NSInteger)index {
+    UIViewController *vc = [self.tabViewController viewControllerForIndex:index];
     UIScrollView *tabContentScrollView = vc.tabContentScrollView;
     if (tabContentScrollView) {
         [self.tabViewController.view addGestureRecognizer:tabContentScrollView.panGestureRecognizer];
     }
 }
 
-- (void)scrollViewWillScrollFromIndex:(NSInteger)index {
-    UIViewController *vc = [self.tabViewController viewControllerForIndex:index];
-    [self.tabViewController.view removeGestureRecognizer:vc.tabContentScrollView.panGestureRecognizer];
-}
-
-- (void)scrollViewDidScrollToIndex:(NSInteger)index {
+- (void)removePanGestureForIndex:(NSInteger)index {
     UIViewController *vc = [self.tabViewController viewControllerForIndex:index];
     UIScrollView *tabContentScrollView = vc.tabContentScrollView;
     if (tabContentScrollView) {
-        [self.tabViewController.view addGestureRecognizer:tabContentScrollView.panGestureRecognizer];
+        [self.tabViewController.view removeGestureRecognizer:tabContentScrollView.panGestureRecognizer];
     }
 }
 
