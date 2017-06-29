@@ -20,7 +20,7 @@ pod 'HJTabViewController',     :git => 'https://github.com/panghaijiao/HJTabView
 #### or
 
 ```
-pod 'HJTabViewController',     :git => 'https://github.com/panghaijiao/HJTabViewController.git',       :tag => '0.0.6'
+pod 'HJTabViewController',     :git => 'https://github.com/panghaijiao/HJTabViewController.git',       :tag => '0.0.7'
 ```
 
 ## License
