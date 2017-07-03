@@ -296,7 +296,13 @@
 
 - (void)removeKVOObserver {
     for (UIViewController *viewController in self.viewControllers) {
-        [viewController.tabContentScrollView removeObserver:self forKeyPath:@"contentOffset"];
+        @try {
+            [viewController.tabContentScrollView removeObserver:self forKeyPath:@"contentOffset"];
+        } @catch (NSException *exception) {
+            
+        } @finally {
+            
+        }
     }
 }
 
