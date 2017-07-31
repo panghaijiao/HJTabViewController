@@ -14,7 +14,7 @@
 ## Podfile
 
 ```
-pod 'HJTabViewController',     :git => 'https://github.com/panghaijiao/HJTabViewController.git'
+pod 'HJTabViewController', '~> 1.0'
 ```
 
 #### or
