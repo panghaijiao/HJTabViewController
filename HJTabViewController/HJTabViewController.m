@@ -384,7 +384,7 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     self.curIndex = scrollView.contentOffset.x / CGRectGetWidth(self.scrollView.frame);
-    UIViewController *viewController = self.viewControllers[self.curIndex];
+    UIViewController *viewController = [self viewControllerForIndex:self.curIndex];
     UIScrollView *curScrollView = viewController.tabContentScrollView;
     UIEdgeInsets insets = curScrollView.contentInset;
     CGFloat maxY = insets.bottom + curScrollView.contentSize.height - curScrollView.bounds.size.height;
