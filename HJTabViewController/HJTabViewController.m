@@ -133,23 +133,26 @@
         minIndex = self.curIndex + 1;
         maxIndex = index;
     }
-    UIViewController *viewController = nil;
     for (NSInteger index = minIndex; index <= maxIndex; index++) {
-        viewController = self.viewControllers[index];
-        UIScrollView *scrollView = viewController.tabContentScrollView;
-        if (!scrollView) {
-            continue;
-        }
-        CGFloat maxY = -MIN(CGRectGetMaxY(self.tabHeaderView.frame), _headParameter.headHeight);
-        if (scrollView.contentOffset.y < maxY) {
-            CGRect tempRect = self.tabHeaderView.frame;
-            scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, maxY);
-            self.tabHeaderView.frame = tempRect;
-        }
-        CGFloat minY = scrollView.contentSize.height - CGRectGetHeight(scrollView.frame);
-        if (scrollView.contentOffset.y > minY) {
-            scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -CGRectGetMaxY(self.tabHeaderView.frame));
-        }
+        UIViewController *viewController = self.viewControllers[index];
+        [self autoFitToViewController:viewController];
+    }
+}
+
+- (void)autoFitToViewController:(UIViewController *)viewController {
+    UIScrollView *scrollView = viewController.tabContentScrollView;
+    if (!scrollView) {
+        return;
+    }
+    CGFloat maxY = -MIN(CGRectGetMaxY(self.tabHeaderView.frame), _headParameter.headHeight);
+    if (scrollView.contentOffset.y < maxY) {
+        CGRect tempRect = self.tabHeaderView.frame;
+        scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, maxY);
+        self.tabHeaderView.frame = tempRect;
+    }
+    CGFloat minY = scrollView.contentSize.height - CGRectGetHeight(scrollView.frame);
+    if (scrollView.contentOffset.y > minY) {
+        scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, -CGRectGetMaxY(self.tabHeaderView.frame));
     }
 }
 
@@ -279,6 +282,7 @@
                 if (_viewDidAppearIsCalledBefore) {
                     [childController endAppearanceTransition];
                 }
+                [self autoFitToViewController:childController];
             }
         } else {
             if (childController.parentViewController) {
