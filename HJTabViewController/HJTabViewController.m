@@ -282,6 +282,9 @@
                 if (_viewDidAppearIsCalledBefore) {
                     [childController endAppearanceTransition];
                 }
+                if ([UIDevice currentDevice].systemVersion.integerValue < 11.0) {
+                    [self autoFitToViewController:childController];
+                }
             }
         } else {
             if (childController.parentViewController) {
