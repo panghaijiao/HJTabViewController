@@ -255,6 +255,9 @@
         scrollView.scrollIndicatorInsets = inset;
         scrollView.contentOffset = CGPointMake(0, -inset.top);
         scrollView.scrollsToTop = NO;
+        if (@available(iOS 11.0, *)) {
+            scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
         [scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionOld context:nil];
     }];
 }
@@ -282,9 +285,7 @@
                 if (_viewDidAppearIsCalledBefore) {
                     [childController endAppearanceTransition];
                 }
-                if ([UIDevice currentDevice].systemVersion.integerValue < 11.0) {
-                    [self autoFitToViewController:childController];
-                }
+                [self autoFitToViewController:childController];
             }
         } else {
             if (childController.parentViewController) {
