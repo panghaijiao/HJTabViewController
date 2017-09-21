@@ -282,7 +282,6 @@
                 if (_viewDidAppearIsCalledBefore) {
                     [childController endAppearanceTransition];
                 }
-                [self autoFitToViewController:childController];
             }
         } else {
             if (childController.parentViewController) {
