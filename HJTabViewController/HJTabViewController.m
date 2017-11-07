@@ -285,7 +285,7 @@
                 if (_viewDidAppearIsCalledBefore) {
                     [childController endAppearanceTransition];
                 }
-                [self autoFitToViewController:childController];
+                [self autoFitLayoutControllerView:childController];
             }
         } else {
             if (childController.parentViewController) {
@@ -297,6 +297,17 @@
             }
         }
     }];
+}
+
+- (void)autoFitLayoutControllerView:(UIViewController *)viewController {
+    UIScrollView *scrollView = viewController.tabContentScrollView;
+    if (!scrollView) {
+        return;
+    }
+    CGFloat maxY = -MIN(CGRectGetMaxY(self.tabHeaderView.frame), _headParameter.headHeight);
+    if (scrollView.contentOffset.y < maxY) {
+        scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, maxY);
+    }
 }
 
 #pragma mark - VerticalScroll
@@ -399,6 +410,11 @@
         [curScrollView setContentOffset:CGPointMake(0, -insets.top) animated:YES];
     }
     _contentOffsetY = curScrollView.contentOffset.y;
+    if (@available(iOS 11.0, *)) {
+        if (_contentOffsetY < 0 && _contentOffsetY < -CGRectGetMaxY(self.tabHeaderView.frame)) {
+            [self observeValueForKeyPath:@"contentOffset" ofObject:curScrollView change:nil context:nil];
+        }
+    }
     [self enableCurScrollViewScrollToTop:YES];
     [self viewDidScrollToIndex:self.curIndex];
 }
