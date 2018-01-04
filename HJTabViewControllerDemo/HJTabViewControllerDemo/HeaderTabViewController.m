@@ -54,6 +54,7 @@
 #pragma mark -
 
 - (void)tabViewController:(HJTabViewController *)tabViewController scrollViewVerticalScroll:(CGFloat)contentPercentY {
+    // 博主很傻，用此方法渐变导航栏是偷懒表现，只是为了demo演示。正确科学方法请自行百度 iOS导航栏透明
     self.navigationController.navigationBar.alpha = contentPercentY;
 }
 
