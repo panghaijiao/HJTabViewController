@@ -66,7 +66,7 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     [self loadContentView];
-    
+    [self layoutSubViewWhenScrollViewFrameChange];
     if (self.showIndexAfterAppear > 0) {
         [self scrollToIndex:self.showIndexAfterAppear animated:NO];
         self.showIndexAfterAppear = 0;
@@ -494,6 +494,19 @@
     self.scrollView.delaysContentTouches = NO;
     self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.containerView addSubview:self.scrollView];
+}
+
+- (void)layoutSubViewWhenScrollViewFrameChange {
+    if (CGRectGetHeight(self.scrollView.frame) == self.scrollView.contentSize.height) {
+        return;
+    }
+    NSInteger count = self.viewControllers.count;
+    CGFloat width = CGRectGetWidth(self.scrollView.bounds);
+    CGFloat height = CGRectGetHeight(self.scrollView.bounds);
+    self.scrollView.contentSize = CGSizeMake(width * count, height);
+    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
+        viewController.view.frame = CGRectMake(width * idx, 0, width, height);
+    }];
 }
 
 @end
