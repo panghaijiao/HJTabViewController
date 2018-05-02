@@ -41,4 +41,10 @@
     return cell;
 }
 
+/* 如果tabContentScrollView无法获取，你可以自定义哦~
+ - (UIScrollView *)tabContentScrollView {
+    return self.tableView;
+ }
+ */
+
 @end
