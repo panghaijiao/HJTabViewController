@@ -250,7 +250,7 @@
         
         UIScrollView *scrollView = viewController.tabContentScrollView;
         UIEdgeInsets inset = scrollView.contentInset;
-        inset.top += _headParameter.headHeight;
+        inset.top += self->_headParameter.headHeight;
         scrollView.contentInset = inset;
         scrollView.scrollIndicatorInsets = inset;
         scrollView.contentOffset = CGPointMake(0, -inset.top);
@@ -282,7 +282,7 @@
                 [childController beginAppearanceTransition:YES animated:YES];
                 [self.scrollView addSubview:childController.view];
                 [childController didMoveToParentViewController:self];
-                if (_viewDidAppearIsCalledBefore) {
+                if (self->_viewDidAppearIsCalledBefore) {
                     [childController endAppearanceTransition];
                 }
                 [self autoFitLayoutControllerView:childController];
