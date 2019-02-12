@@ -27,7 +27,7 @@
 
 - (void)removePlugin {
     [self.tabViewController.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
-        UIScrollView *scrollView = viewController.tabContentScrollView;
+        UIScrollView *scrollView = viewController.hj_tabContentScrollView;
         [scrollView removeObserver:self forKeyPath:@"contentSize"];
     }];
 }
@@ -37,7 +37,7 @@
         return;
     }
     [self.tabViewController.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
-        UIScrollView *scrollView = viewController.tabContentScrollView;
+        UIScrollView *scrollView = viewController.hj_tabContentScrollView;
         if (scrollView.tabBottomInset == 0 && scrollView.contentInset.bottom > 0) {
             scrollView.tabBottomInset = scrollView.contentInset.bottom;
         }

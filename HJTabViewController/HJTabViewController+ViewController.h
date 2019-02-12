@@ -8,10 +8,10 @@
 
 #import "HJTabViewController.h"
 
-@interface UIViewController (tabViewController)
+@interface UIViewController (HJTabViewController)
 
-@property (nonatomic, weak) HJTabViewController *tabViewController;
+@property (nonatomic, weak) HJTabViewController *hj_tabViewController;
 
-@property (nonatomic, weak) UIScrollView        *tabContentScrollView; // ScrollView of childViewController. You can implement as necessary.
+@property (nonatomic, weak) UIScrollView        *hj_tabContentScrollView; // ScrollView of childViewController. You can implement as necessary.
 
 @end
