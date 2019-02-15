@@ -44,7 +44,7 @@
 
 - (void)addPanGestureForIndex:(NSInteger)index {
     UIViewController *vc = [self.tabViewController viewControllerForIndex:index];
-    UIScrollView *tabContentScrollView = vc.tabContentScrollView;
+    UIScrollView *tabContentScrollView = vc.hj_tabContentScrollView;
     if (tabContentScrollView) {
         [self.tabViewController.view addGestureRecognizer:tabContentScrollView.panGestureRecognizer];
     }
@@ -52,7 +52,7 @@
 
 - (void)removePanGestureForIndex:(NSInteger)index {
     UIViewController *vc = [self.tabViewController viewControllerForIndex:index];
-    UIScrollView *tabContentScrollView = vc.tabContentScrollView;
+    UIScrollView *tabContentScrollView = vc.hj_tabContentScrollView;
     if (tabContentScrollView) {
         [self.tabViewController.view removeGestureRecognizer:tabContentScrollView.panGestureRecognizer];
     }

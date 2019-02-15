@@ -47,7 +47,7 @@
         [plugin removePlugin];
     }
     for (UIViewController *viewController in self.viewControllers.objectEnumerator) {
-        viewController.tabViewController = nil;
+        viewController.hj_tabViewController = nil;
     }
 }
 
@@ -117,7 +117,7 @@
 
 - (void)enableCurScrollViewScrollToTop:(BOOL)enable {
     UIViewController *viewController = [self viewControllerForIndex:self.curIndex];
-    viewController.tabContentScrollView.scrollsToTop = enable;
+    viewController.hj_tabContentScrollView.scrollsToTop = enable;
 }
 
 - (void)viewControllersAutoFitToScrollToIndex:(NSInteger)index {
@@ -140,7 +140,7 @@
 }
 
 - (void)autoFitToViewController:(UIViewController *)viewController {
-    UIScrollView *scrollView = viewController.tabContentScrollView;
+    UIScrollView *scrollView = viewController.hj_tabContentScrollView;
     if (!scrollView) {
         return;
     }
@@ -167,7 +167,7 @@
     
     [self removeKVOObserver];
     for (UIViewController *viewController in self.viewControllers.objectEnumerator) {
-        viewController.tabViewController = nil;
+        viewController.hj_tabViewController = nil;
         [viewController.view removeFromSuperview];
     }
     self.viewControllers = nil;
@@ -246,9 +246,9 @@
     self.scrollView.contentSize = CGSizeMake(width * count, height);
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
         viewController.view.frame = CGRectMake(width * idx, 0, width, height);
-        viewController.tabViewController = self;
+        viewController.hj_tabViewController = self;
         
-        UIScrollView *scrollView = viewController.tabContentScrollView;
+        UIScrollView *scrollView = viewController.hj_tabContentScrollView;
         UIEdgeInsets inset = scrollView.contentInset;
         inset.top += self->_headParameter.headHeight;
         scrollView.contentInset = inset;
@@ -300,7 +300,7 @@
 }
 
 - (void)autoFitLayoutControllerView:(UIViewController *)viewController {
-    UIScrollView *scrollView = viewController.tabContentScrollView;
+    UIScrollView *scrollView = viewController.hj_tabContentScrollView;
     if (!scrollView) {
         return;
     }
@@ -315,7 +315,7 @@
 - (void)removeKVOObserver {
     for (UIViewController *viewController in self.viewControllers) {
         @try {
-            [viewController.tabContentScrollView removeObserver:self forKeyPath:@"contentOffset"];
+            [viewController.hj_tabContentScrollView removeObserver:self forKeyPath:@"contentOffset"];
         } @catch (NSException *exception) {
             
         } @finally {
@@ -333,7 +333,7 @@
         return;
     }
     UIViewController *viewController = self.viewControllers[self.curIndex];
-    UIScrollView *scrollView = viewController.tabContentScrollView;
+    UIScrollView *scrollView = viewController.hj_tabContentScrollView;
     if (scrollView != object) {
         return;
     }
@@ -403,7 +403,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     self.curIndex = scrollView.contentOffset.x / CGRectGetWidth(self.scrollView.frame);
     UIViewController *viewController = [self viewControllerForIndex:self.curIndex];
-    UIScrollView *curScrollView = viewController.tabContentScrollView;
+    UIScrollView *curScrollView = viewController.hj_tabContentScrollView;
     UIEdgeInsets insets = curScrollView.contentInset;
     CGFloat maxY = insets.bottom + curScrollView.contentSize.height - curScrollView.bounds.size.height;
     if (curScrollView.contentOffset.y > maxY) {
