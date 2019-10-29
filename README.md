@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/language-objc-5787e5.svg)
 ![](https://img.shields.io/badge/license-MIT-brightgreen.svg)  
 
-![Smaller icon](http://shenmaip.com/HJTabView0.gif)
+![Smaller icon](http://cdn.olinone.com/HJTabView0.gif)
 
 ## Installation with CocoaPods
 
@@ -30,4 +30,4 @@ HJTabViewController is released under the MIT license. See LICENSE for details.
 
 ## Sponsor
 
-![GitHub](http://shenmaip.com/zfbwpay340.png)
+![GitHub](http://cdn.olinone.com/zfbwpay340.png)
